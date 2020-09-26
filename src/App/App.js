@@ -38,6 +38,19 @@ export class App extends Component {
     addCategory = (newCategory) => {
       this.setState({ categories: [...this.state.categories, newCategory]})
     }
+    deleteExpense = id => {
+      const filteredExpenses = this.state.expenses.filter(expense => expense.id !== id)
+      this.setState({ expenses: filteredExpenses})
+    }
+    deleteAccount = id => {
+      const filteredAccount = this.state.accounts.filter(account => account.id !== id)
+      this.setState({ accounts: filteredAccount})
+    }
+    deleteCategory = id => {
+      const filteredCategory = this.state.categories.filter(category => category.id !== id)
+      console.log(filteredCategory)
+      this.setState({ categories: filteredCategory})
+    }
   
     render() {
       return (
@@ -46,9 +59,9 @@ export class App extends Component {
           <ExpenseForm addExpense={this.addExpense}/> 
           <AccountForm addAccount={this.addAccount} />
           <CategoryForm addCategory={this.addCategory} />
-          <ExpenseContainer expenses={this.state.expenses}/>
-          <AccountContainer accounts={this.state.accounts}/>
-          <CategoryContainer categories={this.state.categories}/>
+          <ExpenseContainer expenses={this.state.expenses} deleteExpense={this.deleteExpense}/>
+          <AccountContainer accounts={this.state.accounts} deleteAccount={this.deleteAccount}/>
+          <CategoryContainer categories={this.state.categories} deleteCategory={this.deleteCategory}/>
         </div>
       )
     }
