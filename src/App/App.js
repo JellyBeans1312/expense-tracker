@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ExpenseForm } from '../ExpenseForm/ExpenseForm';
 import { AccountForm } from '../AccountForm/AccountForm';
 import { CategoryForm } from '../CategoryForm/CategoryForm';
-// import ExpenseContainer from '../ExpenseContainer/ExpenseContainer';
+import { ExpenseContainer } from '../ExpenseContainer/ExpenseContainer';
 import './App.scss';
 
 export class App extends Component {
@@ -44,7 +44,7 @@ export class App extends Component {
           <ExpenseForm addExpense={this.addExpense}/> 
           <AccountForm addAccount={this.addAccount} />
           <CategoryForm addCategory={this.addCategory} />
-          {/* <ExpenseContainer expenses={this.state.expenses}/> */}
+          <ExpenseContainer expenses={this.state.expenses}/>
         </div>
       )
     }
