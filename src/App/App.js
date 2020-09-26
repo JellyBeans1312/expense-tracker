@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { ExpenseForm } from '../ExpenseForm/ExpenseForm';
 import { AccountForm } from '../AccountForm/AccountForm';
 import { CategoryForm } from '../CategoryForm/CategoryForm';
-// import ExpenseContainer from '../ExpenseContainer/ExpenseContainer';
+import { ExpenseContainer } from '../ExpenseContainer/ExpenseContainer';
 import './App.scss';
+import { CategoryContainer } from '../CategoryContainer/CategoryContainer';
+import { AccountContainer } from '../AccountContainer/AccountContainer'
 
 export class App extends Component {
     constructor() {
@@ -44,7 +46,9 @@ export class App extends Component {
           <ExpenseForm addExpense={this.addExpense}/> 
           <AccountForm addAccount={this.addAccount} />
           <CategoryForm addCategory={this.addCategory} />
-          {/* <ExpenseContainer expenses={this.state.expenses}/> */}
+          <ExpenseContainer expenses={this.state.expenses}/>
+          <AccountContainer accounts={this.state.accounts}/>
+          <CategoryContainer categories={this.state.categories}/>
         </div>
       )
     }
